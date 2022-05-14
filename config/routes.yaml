@@ -1,0 +1,20 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+
+sign_up:
+    path: /api/sign/up
+    controller: App\Controller\SignController::up
+
+sign_in:
+    path: /api/sign/in
+    controller: App\Controller\SignController::in
+
+order_list:
+    path: /api/order/list
+    controller: App\Controller\OrderController::list
+
+order_show:
+    path: /api/order/show/{id}
+    controller: App\Controller\OrderController::show
