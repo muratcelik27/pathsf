@@ -16,7 +16,7 @@ class OrderController extends \Symfony\Bundle\FrameworkBundle\Controller\Abstrac
         $parameter = json_decode($request->getContent(), true);
 
         $order = new Order();
-        $order->setUser(1);
+        $order->setUser($this->getUser());
         $order->setOrderCode(ByteString::fromRandom(6));
 
         $order->setAddress($parameter['address']);

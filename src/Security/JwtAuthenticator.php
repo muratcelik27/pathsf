@@ -15,6 +15,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\UserProviderInterface;
 use Symfony\Component\Security\Guard\AbstractGuardAuthenticator;
 use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
 
 
 class JwtAuthenticator extends AbstractGuardAuthenticator
@@ -50,7 +51,7 @@ class JwtAuthenticator extends AbstractGuardAuthenticator
     {
         try {
             $credentials = str_replace('Bearer ', '', $credentials);
-            $jwt = (array)JWT::decode($credentials, $this->params->get('jwt_secret'), ['HS256']);
+            $jwt = (array) JWT::decode($credentials,  new Key($this->params->get('jwt_secret'), 'HS256'));
             return $this->em->getRepository(User::class)->findOneBy(['email' => $jwt['user']]);
         } catch (\Exception $exception) {
             throw new AuthenticationException($exception->getMessage());
@@ -59,7 +60,7 @@ class JwtAuthenticator extends AbstractGuardAuthenticator
 
     public function checkCredentials($credentials, UserInterface $user)
     {
-
+        return true;
     }
 
     public function onAuthenticationFailure(Request $request, AuthenticationException $exception)
