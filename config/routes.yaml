@@ -2,24 +2,23 @@
 #    path: /
 #    controller: App\Controller\DefaultController::index
 
-
 sign_up:
     path: /sign/up
     controller: App\Controller\SignController::up
-
 sign_in:
     path: /sign/in
     controller: App\Controller\SignController::in
-
 order_create:
     path: /api/order/create
     controller: App\Controller\OrderController::create
     methods: POST
-
+order_edit:
+    path: /api/order/edit/{id}
+    controller: App\Controller\OrderController::edit
+    methods: POST
 order_list:
     path: /api/order/list
     controller: App\Controller\OrderController::list
-
 order_show:
     path: /api/order/show/{id}
     controller: App\Controller\OrderController::show

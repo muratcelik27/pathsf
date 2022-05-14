@@ -44,24 +44,23 @@ class OrderController extends \Symfony\Bundle\FrameworkBundle\Controller\Abstrac
         return $this->json(['message' => "Siparişiniz Başarılı Bir Şekilde Oluşturuldu"]);
     }
 
-    public function edit(Request $request, OrderRepository $orderRepository, ValidatorInterface $validator, int $id, int $quantity): JsonResponse
+    public function edit(Request $request, OrderRepository $orderRepository, ValidatorInterface $validator, int $id): JsonResponse
     {
         $order = $orderRepository->findOneBy(["id" => $id]);
 
-        $parameter = json_decode($request->getContent(), true);
+        $parameter = json_decode($request->getContent(),true);
 
-        if (date('YmdHi', strtotime($order->getShippingDate())) < date('YmdHi')) {
+        if ($order->getShippingDate()->format('YmdHi') < date('YmdHi')) {
             $order->setQuantity($parameter['quantity']);
             $order->setAddress($parameter['address']);
 
             $errors = $validator->validate($order);
             if (count($errors) > 0) {
-                return new Response((string)$errors, 400);
+                return $this->json($errors, 400);
             }
-
         }
 
-        return $this->json(['status' => 1]);
+        return $this->json(['message' => "Siparişiniz Güncellendi"]);
     }
 
     public function list(OrderRepository $orderRepository): JsonResponse
