@@ -94,7 +94,6 @@ class Order
         $this->product = $product;
     }
 
-
     /**
      * @return mixed
      */
