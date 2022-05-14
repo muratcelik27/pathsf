@@ -7,11 +7,35 @@ use App\Repository\UserRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
-use Symfony\Component\Security\Http\Attribute\CurrentUser;
+use Firebase\JWT\JWT;
 
 class SignController extends \Symfony\Bundle\FrameworkBundle\Controller\AbstractController
 {
-    public function in(?User $user): Response
+    public function in(Request $request, UserRepository $userRepository, UserPasswordHasherInterface $encoder)
+    {
+        $parameters = json_decode($request->getContent(), true);
+
+        $user = $userRepository->findOneBy(['email'=>$parameters['email'],]);
+
+        if (!$user || !$encoder->isPasswordValid($user, $parameters['password'])) {
+            return $this->json([
+                'message' => 'Şifre veya Email Hatalı',
+            ]);
+        }
+
+        $payload = [
+            "user" => $user->getUserIdentifier(),
+            "exp"  => (new \DateTime())->modify("+5 days")->getTimestamp(),
+        ];
+
+        $jwt = JWT::encode($payload, $this->getParameter('jwt_secret'), 'HS256');
+        return $this->json([
+            'message' => 'success!',
+            'token' => sprintf('Bearer %s', $jwt),
+        ]);
+    }
+
+   /* public function in(?User $user): Response
     {
         if (null === $user) {
             return $this->json([
@@ -25,7 +49,7 @@ class SignController extends \Symfony\Bundle\FrameworkBundle\Controller\Abstract
             'user' => $user->getUserIdentifier(),
             'token' => $token,
         ]);
-    }
+    }*/
 
     public function up(UserPasswordHasherInterface $passwordHasher, UserRepository $userRepository): Response
     {
