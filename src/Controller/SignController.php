@@ -29,27 +29,12 @@ class SignController extends \Symfony\Bundle\FrameworkBundle\Controller\Abstract
         ];
 
         $jwt = JWT::encode($payload, $this->getParameter('jwt_secret'), 'HS256');
+
         return $this->json([
             'message' => 'success!',
             'token' => sprintf('Bearer %s', $jwt),
         ]);
     }
-
-   /* public function in(?User $user): Response
-    {
-        if (null === $user) {
-            return $this->json([
-                'message' => 'missing credentials',
-            ], Response::HTTP_UNAUTHORIZED);
-        }
-
-        $token = "fake_token_11245541"; // somehow create an API token for $user
-
-        return $this->json([
-            'user' => $user->getUserIdentifier(),
-            'token' => $token,
-        ]);
-    }*/
 
     public function up(UserPasswordHasherInterface $passwordHasher, UserRepository $userRepository): Response
     {

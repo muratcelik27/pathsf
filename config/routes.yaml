@@ -4,11 +4,11 @@
 
 
 sign_up:
-    path: /api/sign/up
+    path: /sign/up
     controller: App\Controller\SignController::up
 
 sign_in:
-    path: /api/sign/in
+    path: /sign/in
     controller: App\Controller\SignController::in
 
 order_list:
