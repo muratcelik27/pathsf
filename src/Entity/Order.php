@@ -44,7 +44,7 @@ class Order
     private $address;
 
     /**
-     * @ORM\Column(name="shipping_date",type="date")
+     * @ORM\Column(name="shipping_date",type="datetime")
      */
     private $shippingDate;
 
@@ -164,7 +164,7 @@ class Order
      */
     public function setShippingDate($shippingDate): void
     {
-        $this->shippingDate = $shippingDate;
+        $this->shippingDate = new \DateTime($shippingDate);
     }
 
 }

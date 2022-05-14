@@ -11,13 +11,14 @@ sign_in:
     path: /sign/in
     controller: App\Controller\SignController::in
 
+order_create:
+    path: /api/order/create
+    controller: App\Controller\OrderController::create
+    methods: POST
+
 order_list:
     path: /api/order/list
     controller: App\Controller\OrderController::list
-
-order_index:
-    path: /api/order/index
-    controller: App\Controller\OrderController::index
 
 order_show:
     path: /api/order/show/{id}

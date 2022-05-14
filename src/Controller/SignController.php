@@ -25,13 +25,13 @@ class SignController extends \Symfony\Bundle\FrameworkBundle\Controller\Abstract
 
         $payload = [
             "user" => $user->getUserIdentifier(),
-            "exp"  => (new \DateTime())->modify("+5 days")->getTimestamp(),
+            "exp"  => (new \DateTime())->modify("+30 days")->getTimestamp(),
         ];
 
         $jwt = JWT::encode($payload, $this->getParameter('jwt_secret'), 'HS256');
 
         return $this->json([
-            'message' => 'success!',
+            'message' => 'Giriş İşlemi Başarılı',
             'token' => sprintf('Bearer %s', $jwt),
         ]);
     }
