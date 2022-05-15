@@ -124,3 +124,31 @@ GET http://localhost/pathsf/public/order/list
     }
 ]
 ```
+
+##### 2) Sipariş Deay
+```http
+GET http://localhost/pathsf/public/order/show/1
+```
+
+##### Cevap
+```json
+{
+    "user": {
+        "id": 1,
+        "email": "murat@murat.com",
+        "userIdentifier": "murat@murat.com",
+        "username": "murat@murat.com",
+        "roles": [
+            "ROLE_USER"
+        ],
+        "password": "$2y$13$s7ikynRyeGr2vxQXBvkUAuv7dujnEqcD3AXZg9sP38ISwHNzPljVK",
+        "salt": null
+    },
+    "product": [],
+    "id": 1,
+    "orderCode": "3ZB7w8",
+    "quantity": 5,
+    "address": "Burası bir adres",
+    "shippingDate": "2022-05-19T19:51:53+00:00"
+}
+```
