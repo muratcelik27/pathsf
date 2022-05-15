@@ -35,7 +35,7 @@ Authorization : "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoibXVyYXR
 ```
 ##### 2) Sipariş Oluşturma
 ```http
-POST http://localhost/pathsf/public/order/create
+POST http://localhost/pathsf/public/api/order/create
 ```
 ```json
 {
@@ -53,7 +53,7 @@ POST http://localhost/pathsf/public/order/create
 
 ##### 2) Sipariş Güncelleme
 ```http
-POST http://localhost/pathsf/public/order/edit
+POST http://localhost/pathsf/public/api/order/edit
 ```
 ```json
 {
@@ -70,7 +70,7 @@ POST http://localhost/pathsf/public/order/edit
 
 ##### 2) Sipariş Listeleme
 ```http
-GET http://localhost/pathsf/public/order/list
+GET http://localhost/pathsf/public/api/order/list
 ```
 
 ##### Cevap
@@ -127,7 +127,7 @@ GET http://localhost/pathsf/public/order/list
 
 ##### 2) Sipariş Deay
 ```http
-GET http://localhost/pathsf/public/order/show/1
+GET http://localhost/pathsf/public/api/order/show/1
 ```
 
 ##### Cevap
