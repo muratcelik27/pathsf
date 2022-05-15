@@ -1,0 +1,211 @@
+{
+	"id": "b6d1782b-0dd4-6e1c-acf6-99f211db7756",
+	"name": "PathSF",
+	"description": "",
+	"order": [
+		"a14bb0d1-5050-684a-0f36-2915c0f61352",
+		"d6e223b8-9318-eba1-93cc-f680dacbbdab",
+		"d7df9d39-ec77-bbe0-14be-8ef796472a2a",
+		"67af4c5c-32d2-42c9-efb8-a91e03b97569",
+		"8f0c1bc0-5be1-d2f5-1656-7d8b2c99d57a",
+		"606a6d74-f95a-81a7-3b04-f2b75b876c14"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1652472912505,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "606a6d74-f95a-81a7-3b04-f2b75b876c14",
+			"headers": "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoibXVyYXRAbXVyYXQuY29tIiwiZXhwIjoxNjU1MTQ4ODY3fQ.LV1kwgxkC3-F3nU44vnJczMo7rujQ6VVUWRS3XXytic\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoibXVyYXRAbXVyYXQuY29tIiwiZXhwIjoxNjU1MTQ4ODY3fQ.LV1kwgxkC3-F3nU44vnJczMo7rujQ6VVUWRS3XXytic",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/pathsf/public/api/order/show/1",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1652560858801,
+			"name": "http://localhost/pathsf/public/api/order/show/1",
+			"description": "",
+			"collectionId": "b6d1782b-0dd4-6e1c-acf6-99f211db7756",
+			"responses": []
+		},
+		{
+			"id": "67af4c5c-32d2-42c9-efb8-a91e03b97569",
+			"headers": "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoibXVyYXRAbXVyYXQuY29tIiwiZXhwIjoxNjU1MTQ4ODY3fQ.LV1kwgxkC3-F3nU44vnJczMo7rujQ6VVUWRS3XXytic\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoibXVyYXRAbXVyYXQuY29tIiwiZXhwIjoxNjU1MTQ4ODY3fQ.LV1kwgxkC3-F3nU44vnJczMo7rujQ6VVUWRS3XXytic",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/pathsf/public/api/order/edit/1",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1652558443565,
+			"name": "http://localhost/pathsf/public/api/order/edit/1",
+			"description": "",
+			"collectionId": "b6d1782b-0dd4-6e1c-acf6-99f211db7756",
+			"responses": [],
+			"rawModeData": "{\n\t\"quantity\":3,\n\t\"address\":\"Burası bir adres değişti\"\n}"
+		},
+		{
+			"id": "8f0c1bc0-5be1-d2f5-1656-7d8b2c99d57a",
+			"headers": "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoibXVyYXRAbXVyYXQuY29tIiwiZXhwIjoxNjU1MTQ4ODY3fQ.LV1kwgxkC3-F3nU44vnJczMo7rujQ6VVUWRS3XXytic\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoibXVyYXRAbXVyYXQuY29tIiwiZXhwIjoxNjU1MTQ4ODY3fQ.LV1kwgxkC3-F3nU44vnJczMo7rujQ6VVUWRS3XXytic",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/pathsf/public/api/order/list",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [
+				{
+					"key": "WebForm[phone]",
+					"value": "+905444444444',",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "WebForm[name]",
+					"value": "Murat",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "WebForm[surname]",
+					"value": "Çelik",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1652635378020,
+			"name": "http://localhost/pathsf/public/api/order/list",
+			"description": "",
+			"collectionId": "b6d1782b-0dd4-6e1c-acf6-99f211db7756",
+			"responses": []
+		},
+		{
+			"id": "a14bb0d1-5050-684a-0f36-2915c0f61352",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost/pathsf/public/api/sign/up",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "b6d1782b-0dd4-6e1c-acf6-99f211db7756",
+			"data": null,
+			"dataMode": "params",
+			"name": "http://localhost/pathsf/public/api/sign/up",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1652529228209,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "d6e223b8-9318-eba1-93cc-f680dacbbdab",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/pathsf/public/sign/in",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1652556715820,
+			"name": "http://localhost/pathsf/public/api/sign/in",
+			"description": "",
+			"collectionId": "b6d1782b-0dd4-6e1c-acf6-99f211db7756",
+			"responses": [],
+			"rawModeData": "{\r\n    \"email\": \"murat@murat.com\",\r\n    \"password\": \"123456\"\r\n}"
+		},
+		{
+			"id": "d7df9d39-ec77-bbe0-14be-8ef796472a2a",
+			"headers": "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoibXVyYXRAbXVyYXQuY29tIiwiZXhwIjoxNjU1MTQ4ODY3fQ.LV1kwgxkC3-F3nU44vnJczMo7rujQ6VVUWRS3XXytic\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoibXVyYXRAbXVyYXQuY29tIiwiZXhwIjoxNjU1MTQ4ODY3fQ.LV1kwgxkC3-F3nU44vnJczMo7rujQ6VVUWRS3XXytic",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/pathsf/public/api/order/create",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1652636560947,
+			"name": "http://localhost/pathsf/public/api/order/create",
+			"description": "a",
+			"collectionId": "b6d1782b-0dd4-6e1c-acf6-99f211db7756",
+			"responses": [],
+			"rawModeData": "{\n\t\"productId\":1,\n\t\"quantity\":5,\n\t\"address\":\"Burası bir örnek adres\"\n}"
+		}
+	]
+}
