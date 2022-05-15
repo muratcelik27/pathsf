@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Product;
 use App\Entity\User;
+use App\Repository\ProductRepository;
 use App\Repository\UserRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -36,7 +38,7 @@ class SignController extends \Symfony\Bundle\FrameworkBundle\Controller\Abstract
         ]);
     }
 
-    public function up(UserPasswordHasherInterface $passwordHasher, UserRepository $userRepository): Response
+    public function up(UserPasswordHasherInterface $passwordHasher, UserRepository $userRepository,ProductRepository $productRepository): Response
     {
         // kendimiz için manuel bir user ekledik
         $user = new User();
@@ -44,6 +46,17 @@ class SignController extends \Symfony\Bundle\FrameworkBundle\Controller\Abstract
         $user->setPassword($passwordHasher->hashPassword($user, "123456"));
         $user->setRoles(['ROLE_USER']);
         $userRepository->add($user,true);
+
+        // Örnek üründe ekledik
+        $product = new Product();
+        $product->setName("Telefon");
+        $product->setPrice(100);
+        $productRepository->add($product,true);
+
+        $product = new Product();
+        $product->setName("Bilgisayar");
+        $product->setPrice(500);
+        $productRepository->add($product,true);
 
         return $this->json([
             'message' => 'Kullanıcı Oluşturma İşlemi Başarılı',
