@@ -50,15 +50,13 @@ class Order
 
     /**
      * @var User
-     * @ORM\OneToOne(targetEntity="App\Entity\User")
-     * @JoinColumn(name="user_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="User")
      */
     private $user;
 
     /**
      * @var Product
-     * @ORM\OneToOne(targetEntity="App\Entity\Product")
-     * @JoinColumn(name="product_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Product")
      */
     private $product;
 
