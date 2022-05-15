@@ -45,6 +45,11 @@ class SignController extends \Symfony\Bundle\FrameworkBundle\Controller\Abstract
         $user->setRoles(['ROLE_USER']);
         $userRepository->add($user,true);
 
-        return $this->json(['status' => 1]);
+        return $this->json([
+            'message' => 'Kullanıcı Oluşturma İşlemi Başarılı',
+            'email'=>'murat@murat.com',
+            'password'=>'123456',
+
+        ]);
     }
 }
