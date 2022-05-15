@@ -65,7 +65,7 @@ class OrderController extends \Symfony\Bundle\FrameworkBundle\Controller\Abstrac
 
     public function list(OrderRepository $orderRepository): JsonResponse
     {
-        $data = $orderRepository->findAllByIdJoinedToProduct($this->getUser()->getId());
+        $data = $orderRepository->findAllByIdJoined($this->getUser()->getId());
 
         return $this->json($data);
     }

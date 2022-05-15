@@ -27,7 +27,7 @@ class OrderRepository extends ServiceEntityRepository
         return $order;
     }
 
-    public function findAllByIdJoinedToProduct(int $userId)
+    public function findAllByIdJoined(int $userId)
     {
         $query = $this->getEntityManager()->createQuery(
             'SELECT o, p, u
