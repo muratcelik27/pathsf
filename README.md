@@ -35,9 +35,8 @@ Authorization : "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoibXVyYXR
 ```
 ##### 2) Sipariş Oluşturma
 ```http
-POST http://localhost/pathsf/public/order/sign/create
+POST http://localhost/pathsf/public/order/create
 ```
-Request Header 
 ```json
 {
 	"productId":1,
@@ -52,3 +51,76 @@ Request Header
 }
 ```
 
+##### 2) Sipariş Güncelleme
+```http
+POST http://localhost/pathsf/public/order/edit
+```
+```json
+{
+	"quantity":3,
+	"address":"Burası bir adres değişti"
+}
+```
+##### Cevap
+```json
+{
+    "message": "Siparişiniz Güncellendi"
+}
+```
+
+##### 2) Sipariş Listeleme
+```http
+GET http://localhost/pathsf/public/order/list
+```
+
+##### Cevap
+```json
+[
+    {
+        "user": {
+            "id": 1,
+            "email": "murat@murat.com",
+            "userIdentifier": "murat@murat.com",
+            "username": "murat@murat.com",
+            "roles": [
+                "ROLE_USER"
+            ],
+            "password": "$2y$13$s7ikynRyeGr2vxQXBvkUAuv7dujnEqcD3AXZg9sP38ISwHNzPljVK",
+            "salt": null
+        },
+        "product": {
+            "__initializer__": [],
+            "__cloner__": [],
+            "__isInitialized__": false
+        },
+        "id": 1,
+        "orderCode": "3ZB7w8",
+        "quantity": 5,
+        "address": "Burası bir adres",
+        "shippingDate": "2022-05-19T19:51:53+00:00"
+    },
+    {
+        "user": {
+            "id": 1,
+            "email": "murat@murat.com",
+            "userIdentifier": "murat@murat.com",
+            "username": "murat@murat.com",
+            "roles": [
+                "ROLE_USER"
+            ],
+            "password": "$2y$13$s7ikynRyeGr2vxQXBvkUAuv7dujnEqcD3AXZg9sP38ISwHNzPljVK",
+            "salt": null
+        },
+        "product": {
+            "__initializer__": [],
+            "__cloner__": [],
+            "__isInitialized__": false
+        },
+        "id": 6,
+        "orderCode": "L1VUMz",
+        "quantity": 5,
+        "address": "Burası bir örnek adres",
+        "shippingDate": "2022-05-20T17:46:58+00:00"
+    }
+]
+```
