@@ -77,50 +77,24 @@ GET http://localhost/pathsf/public/api/order/list
 ```json
 [
     {
-        "user": {
-            "id": 1,
-            "email": "murat@murat.com",
-            "userIdentifier": "murat@murat.com",
-            "username": "murat@murat.com",
-            "roles": [
-                "ROLE_USER"
-            ],
-            "password": "$2y$13$s7ikynRyeGr2vxQXBvkUAuv7dujnEqcD3AXZg9sP38ISwHNzPljVK",
-            "salt": null
-        },
-        "product": {
-            "__initializer__": [],
-            "__cloner__": [],
-            "__isInitialized__": false
-        },
         "id": 1,
-        "orderCode": "3ZB7w8",
-        "quantity": 5,
-        "address": "Burası bir adres",
-        "shippingDate": "2022-05-19T19:51:53+00:00"
-    },
-    {
-        "user": {
-            "id": 1,
-            "email": "murat@murat.com",
-            "userIdentifier": "murat@murat.com",
-            "username": "murat@murat.com",
-            "roles": [
-                "ROLE_USER"
-            ],
-            "password": "$2y$13$s7ikynRyeGr2vxQXBvkUAuv7dujnEqcD3AXZg9sP38ISwHNzPljVK",
-            "salt": null
-        },
-        "product": {
-            "__initializer__": [],
-            "__cloner__": [],
-            "__isInitialized__": false
-        },
-        "id": 6,
-        "orderCode": "L1VUMz",
+        "orderCode": "LsPVsq",
         "quantity": 5,
         "address": "Burası bir örnek adres",
-        "shippingDate": "2022-05-20T17:46:58+00:00"
+        "shippingDate": "2022-05-20T18:29:53+00:00",
+        "product": {
+            "id": 1,
+            "name": "Telefon",
+            "price": 100
+        },
+        "user": {
+            "id": 1,
+            "email": "murat@murat.com",
+            "roles": [
+                "ROLE_USER"
+            ],
+            "password": "$2y$13$u2UbXX23hEI6aW/1JcfyXuTSWXNMFq14a1sCpWJk9oihvOUGi2jF6"
+        }
     }
 ]
 ```
@@ -141,14 +115,18 @@ GET http://localhost/pathsf/public/api/order/show/1
         "roles": [
             "ROLE_USER"
         ],
-        "password": "$2y$13$s7ikynRyeGr2vxQXBvkUAuv7dujnEqcD3AXZg9sP38ISwHNzPljVK",
+        "password": "$2y$13$u2UbXX23hEI6aW/1JcfyXuTSWXNMFq14a1sCpWJk9oihvOUGi2jF6",
         "salt": null
     },
-    "product": [],
+    "product": {
+        "id": 1,
+        "name": "Telefon",
+        "price": 100
+    },
     "id": 1,
-    "orderCode": "3ZB7w8",
+    "orderCode": "LsPVsq",
     "quantity": 5,
-    "address": "Burası bir adres",
-    "shippingDate": "2022-05-19T19:51:53+00:00"
+    "address": "Burası bir örnek adres",
+    "shippingDate": "2022-05-20T18:29:53+00:00"
 }
 ```
